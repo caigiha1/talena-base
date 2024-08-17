@@ -1,0 +1,15 @@
+.sapp-text--tabs {
+  color: #141414 !important;
+}
+.active-tab {
+  position: relative;
+  &:after {
+    content: "";
+    display: flex;
+    width: 50%; /* Điều chỉnh độ dài của đường viền */
+    padding-top: 4px; /* Khoảng cách từ chữ đến đường viền */
+    border-bottom: 2px solid #6366F1; /* Màu và độ dày của đường viền */
+    align-items: center;
+    margin: 0 auto;
+  }
+}

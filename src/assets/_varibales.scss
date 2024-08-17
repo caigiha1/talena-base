@@ -1,0 +1,32 @@
+// Define color variables
+$warning: #fff4d8 !default;
+$warning-text: #e0a610 !default;
+
+$danger: #ffd5d2 !default;
+$danger-text: #d91717 !default;
+
+$primary: #c3d1ff !default;
+$primary-text: #1747c2 !default;
+
+$info: #e7dcff !default;
+$info-text: #4d3299 !default;
+
+$success: #fff1ea !default;
+$success-text: #e96929 !default;
+
+$light: #eafffe !default;
+$light-text: #3fbac1 !default;
+
+$secondary: #c5edc9 !default;
+$secondary-text: #307b45 !default;
+
+$theme-colors: (
+  "light": $light,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+) !default;
+  

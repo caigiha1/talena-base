@@ -1,0 +1,457 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  @apply text-sm;
+  @apply bg-white;
+  @apply text-lightGrey-900;
+}
+
+@media (min-width: 768px) {
+  .custom-grid-rows {
+    grid-template-rows: repeat(8, 20vh);
+  }
+}
+
+@media (min-width: 1280px) {
+  .custom-grid-rows {
+    grid-template-rows: repeat(8, 7.5vh);
+  }
+}
+
+
+.heica-btn-color {
+  background-color: #568cf9 !important;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+#root {
+  --text-danger: #f8285a;
+  --text-success: #42bf47;
+  --bs-warning: #fff4d8;
+  --bs-warning-text: #e0a610;
+
+  --bs-danger: #ffd5d2;
+  --bs-danger-text: #d91717;
+
+  --bs-primary: #c3d1ff;
+  --bs-primary-text: #1747c2;
+
+  --bs-info: #e7dcff;
+  --bs-info-text: #4d3299;
+
+  --bs-success: #fff1ea;
+  --bs-success-text: #e96929;
+
+  --bs-light: #eafffe;
+  --bs-light-text: #3fbac1;
+
+  --bs-secondary: #c5edc9;
+  --bs-secondary-text: #307b45;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+.text-gray-100 {
+  text-decoration: #8e99b5;
+}
+
+.logo.tiptap:hover {
+  filter: drop-shadow(0 0 2em #b2b2b2);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+/* Editor Component styles */
+.editor {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  text-align: start;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 200px;
+  color: #111827;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Basic editor content styles */
+.ProseMirror-focused {
+  outline: none;
+}
+.ProseMirror {
+  text-align: start;
+}
+
+.ProseMirror > * + * {
+  margin-top: 0.75em;
+  margin-bottom: 1.25em;
+}
+
+.ProseMirror ul,
+ol {
+  padding: 0 1rem;
+}
+
+.ProseMirror h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+}
+
+.ProseMirror pre {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: "JetBrainsMono", monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.ProseMirror code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ProseMirror blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(5, 5, 5, 0.1);
+}
+
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid rgba(5, 5, 5, 0.1);
+  margin: 2rem 0;
+}
+
+/* Suggestions styles */
+.items {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0px 10px 20px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.9rem;
+  overflow: hidden;
+  padding: 0.2rem;
+  position: relative;
+}
+
+.item {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  display: block;
+  margin: 0;
+  padding: 0.2rem 0.4rem;
+  text-align: left;
+  width: 100%;
+}
+
+.item.is-selected {
+  border-color: #b3b3b3;
+}
+
+.bubble-menu {
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  color: #0d0d0d;
+  gap: 2px;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  box-shadow:
+          0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+          0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+          0 12.5px 10px rgba(0, 0, 0, 0.06),
+          0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+          0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+          0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+//Suggestion Tiptap
+
+.dropdown-menu {
+  background: var(--white);
+  border: 1px solid var(--gray-1);
+  border-radius: 0.7rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  overflow: auto;
+  padding: 0.4rem;
+  position: relative;
+}
+
+.dropdown-menu button {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  gap: 0.25rem;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-menu button:hover,
+.dropdown-menu button:hover.is-selected {
+  background-color: var(--gray-3);
+}
+
+.dropdown-menu button.is-selected {
+  background-color: var(--gray-2);
+}
+
+
+#timepicker-day:after {
+    content: '| AM';
+    display: flex;
+    margin-left: auto;
+    margin-top: 3px;
+    color: #9d9d9d;
+  }
+
+  #timepicker-night:after {
+    content: '| PM';
+    display: flex;
+    margin-left: auto;
+    margin-top: 3px;
+    color: #9d9d9d;
+  }
+
+  /* React component */
+  .react-component {
+    background-color: #ffffff;
+    border: #9d9d9f;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+
+    label {
+      border-radius: 0 0 0.5rem 0;
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.25rem 0.5rem;
+      top: 0;
+    }
+
+    .content {
+      padding: 1rem;
+
+      &.is-editable {
+        border: 2px dashed var(--gray-3);
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  /* Code and preformatted text styles */
+  code {
+    background-color: var(--purple-light);
+    border-radius: 0.4rem;
+    color: var(--black);
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
+
+  pre {
+    background: var(--black);
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-family: 'JetBrainsMono', monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+
+    code {
+      background: none;
+      color: inherit;
+      font-size: 0.8rem;
+      padding: 0;
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid var(--gray-3);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--gray-2);
+    margin: 2rem 0;
+  }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+}
+
+::-webkit-scrollbar {
+  /* Customize the scrollbar width */
+  width: 8px !important;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  /* Customize the scrollbar track */
+  background-color: rgba(211, 211, 211, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(211, 211, 211);
+  width: 3px !important;
+  border-radius: 8px;
+
+  /* Customize the scrollbar thumb */
+}
